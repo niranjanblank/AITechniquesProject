@@ -61,9 +61,13 @@ def get_transform():
     Gives the transform that needs to be applied on the image before prediction
     :return:
     """
+    # transform = transforms.Compose([
+    #     transforms.Resize((64, 64)),
+    #     transforms.ToTensor(),
+    #     transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
+    # ])
     transform = transforms.Compose([
-        transforms.Resize((64, 64)),  # Resize images to 64x64
-        transforms.ToTensor(),  # Convert PIL image to PyTorch tensor
-        transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))  # Normalize to [-1, 1] for all 3 RGB channels
+        transforms.Resize((64, 64)),
+        transforms.ToTensor()
     ])
     return transform
