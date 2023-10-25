@@ -1,6 +1,7 @@
 import customtkinter as ctk
 from tkinter import filedialog, Canvas
-
+import cv2
+from PIL import Image, ImageTk
 class VideoImport(ctk.CTkFrame):
     def __init__(self, parent, import_func):
         super().__init__(master=parent)
@@ -18,6 +19,7 @@ class VideoOutput(Canvas):
         super().__init__(master=parent, background="#2B2B2B", bd=0, highlightthickness=0,relief="ridge")
         self.grid(row=0, column=1, sticky="nsew")
         self.bind('<Configure>', resize_image)
+
 
 class CloseOutput(ctk.CTkButton):
     def __init__(self,parent, close_func):
